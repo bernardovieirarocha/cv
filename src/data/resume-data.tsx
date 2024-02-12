@@ -98,7 +98,7 @@ export const RESUME_DATA = {
       logo: "",
       link: {
         label: "github.com",
-        href: "https://jarocki.me/",
+        href: "https://github.com/upwardweb/respectaboveviolence",
       },
     },
     {
@@ -109,7 +109,7 @@ export const RESUME_DATA = {
       logo: "",
       link: {
         label: "github.com",
-        href: "https://useminimal.com/",
+        href: "https://github.com/upwardweb/redjango",
       },
     },
     {
