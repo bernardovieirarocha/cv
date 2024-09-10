@@ -1,67 +1,27 @@
-![cv](https://github.com/BartoszJarocki/cv/assets/1017620/79bdb9fc-0b20-4d2c-aafe-0526ad4a71d2)
+# My Personal Website CV
 
-# Minimalist CV [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FBartoszJarocki%2Fcv)
+This repository contains the source code for my personal website CV, which is hosted at [bernardorocha.me](https://bernardorocha.me). The website is designed to showcase my professional background, skills, projects, and contact information in a clean and modern layout.
 
-Simple web app that renders minimalist CV with print-friendly layout.
+## Features
 
-Built with Next.js and shadcn/ui, deployed on Vercel.
+- **Responsive Design:** The website is fully responsive, ensuring it looks great on all devices, including desktops, tablets, and smartphones.
+- **Dynamic Content:** The content is dynamically generated using JavaScript, allowing for easy updates and modifications.
+- **SEO Optimized:** The website is optimized for search engines to improve visibility and reach.
+- **Customizable:** The website’s structure and styling are modular, making it easy to customize for different needs or preferences.
 
-# Features
+## Installation and Setup
 
-- Setup only takes a few minutes [single config file](./src/data/resume-data.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/ui, TailwindCss
-- Auto generated Layout
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+To run this website locally on your machine, follow these steps:
 
-# Getting Started Locally
-
-1. Clone this repository to your local machine:
-
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/BartoszJarocki/cv.git
+      git clone https://github.com/bernardovieirarocha/cv/
    ```
-
-2. Move to the cloned directory
-
+2. **Install depedencies**
    ```bash
-   cd cv
+      npm install
    ```
-
-3. Install dependencies:
-
-   ```bash
-   yarn install
-   ```
-
-4. Start the local Server:
-
-   ```bash
-   yarn dev
-   ```
-
-5. Open the [Config file](./src/data/resume-data.tsx) and make changes
-
-# Run with Docker
-
-Build the container
-
-```
-docker compose build
-```
-
-Run the container
-
-```
-docker compose up -d
-```
-
-Stop the Container
-
-```
-docker compose down 
-```
-
-# License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+4. **Run the NextJs frontend**
+  ```
+   npm run dev
+  ```
