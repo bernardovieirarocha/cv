@@ -1,7 +1,6 @@
-import Banner from './banner.jpeg';
-import PucMinas from './pucminas.png';
+// import Logo from "./consultly.svg";
 
-export {
-  Banner, PucMinas
-};
+// export {
+//   Logo,
 
+// };

@@ -1,7 +1,7 @@
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
-import { PucMinas } from "@/images/logos";
-
-// This is the data for the resume in English
+// import {
+//   Logo
+// } from "@/images/logos";
 
 export const RESUME_DATA = {
   name: "Bernardo Vieira Rocha",
@@ -9,9 +9,9 @@ export const RESUME_DATA = {
   location: "Belo Horizonte, Brazil, MG",
   locationLink: "https://www.google.com/maps/place/BeloHorizonte",
   about:
-    "Undergraduate in Computer Science and Computer Engineering.",
+    "Graduando em Ciência da Computação e Engenharia de Computação.",
   summary:
-  "I am an Undergraduate Student 🎓 pursuing degrees in Computer Science at the Pontifical Catholic University of Minas Gerais and in Computer Engineering at the Federal Center for Technological Education of Minas Gerais. I am a 💻 😃 Tech Enthusiast passionate about learning and utilizing new technologies. I love building interesting projects and products that also serve a purpose.",
+    "Eu sou um Estudante de Graduação 🎓 @Pontifícia Universidade Católica de Minas Gerais cursando Ciência da Computação. Eu sou um Enthusiasta 💻 😃 apaixonado por aprender e utilizar novas tecnologias. Eu adoro construir projetos e produtos interessantes, que também sirvam um propósito.",
   avatarUrl:
     "https://avatars.githubusercontent.com/u/64905090?s=400&u=38aeca0edb2c6c8ccd97e96726c6ab622026c39f&v=4",
   personalWebsiteUrl: "https://bernardorocha.com",
@@ -21,7 +21,7 @@ export const RESUME_DATA = {
     social: [
       {
         name: "GitHub",
-        url: "https://github.com/bernardovieirarocha",
+        url: "https://github.com/upwardweb",
         icon: GitHubIcon,
       },
       {
@@ -33,87 +33,88 @@ export const RESUME_DATA = {
   },
   education: [
     {
-      school: "Federal Center for Technological Education of Minas Gerais",
-      degree: "Bachelor in Computer Engineering",
+      school: "Centro Federal de Educação Tecnológica de Minas Gerais",
+      degree: "Bacharelado em Engenharia de Computação",
       start: "2024",
       end: "2029",
     },
     {
       school: "Pontifical Catholic University of Minas Gerais",
-      degree: "Bachelor in Computer Science",
+      degree: "Bacharelado em Ciência da Computação",
       start: "2024",
       end: "2028",
     },
     {
-      school: "Magnum Agostiniano Cidade Nova School",
-      degree: "High School Diploma",
+      school: "Colégio Magnum Agostiniano Cidade Nova",
+      degree: "Ensino Médio Completo",
       start: "2019",
       end: "2023",
     }
   ],
-  certification: [
+  extra: [
     {
-      nameCertification: "Ctrl Play+Young Course",
+      nameCertification: "Curso Ctrl Play+Young",
       link: "https://ctrlplay.com.br/cursos-regulares/ctrl-young/",
       badges: [],
       logo: "",
       start: "2020",
       end: "2021",
       description:
-        "Completion of the Ctrl-Play+Young course with a focus on programming and web development.",
+        "Conclusão do curso Ctrl-Play+Young com enfâse em programação e desenvolvimento web.",
     },
     {
-      nameCertification: "Complete Python 3",
+      nameCertification: "Python 3 COMPLETO.",
       link: "https://www.udemy.com/certificate/UC-21V2Q9RM/",
       badges: ["Udemy"],
-      logo: PucMinas,
+      logo: "",
       start: "2018",
       end: "",
       description:
-        "Certificate of completion of the Complete Python 3 course.",
+        "Certificado de conclusão do curso de Python 3 COMPLETO.",
     },
     {
-      nameCertification: "Web Development with Django and React",
+      nameCertification: "Desenvolvimento web com Django, React e deploy AWS e Linux",
       link: "https://www.udemy.com/certificate/UC-2dcdc62c-fde4-48fa-99e3-9bd8eeb77a49/",
       badges: ["Udemy"],
       logo: "",
       start: "2024",
       end: "",
       description:
-        "Certificate of completion of the Udemy course on Web Development with Django.",
+        "Certificado de conclusão do curso da Udemy de Desenvolvimento web com Django.",
     },
     {
-      nameCertification: "International Olympiad of Mathématiques sans frontières",
+      nameCertification: "Olimpíada Internacional Mathématiques sans frontières",
       link: "https://www.matematicasemfronteiras.org/OIMSF_2023_NACIONAL_OURO.pdf",
       badges: [],
       logo: "",
       start: "2023",
       end: "",
       description:
-        "Gold Medalist in the International Olympiad of Mathématiques sans frontières.",
+        "Medalhalista de Ouro na OMISF.",
     },
     {
-      nameCertification: "Brazilian Astronomy and Astronautics Olympiad",
+      nameCertification: "Olimpíada Brasileira de Astronomia e Astronáutica",
       link: "http://www.oba.org.br/site/",
       badges: [],
       logo: "",
       start: "2023",
       end: "",
       description:
-        "Silver Medalist in the 2023 Brazilian Astronomy and Astronautics Olympiad.",
+        "Medalhalista de Prata na OBA 2023.",
     }
+    
   ],
   work: [
     {
       company: "PUC MINAS",
       link: "",
-      badges: ["On-site"],
-      title: "Computer Science Tutor (AEDs I)",
+      badges: ["Presencial"],
+      title: "Monitor de Computação (AEDs I)",
       logo: "",
       start: "2024",
       end: "Present",
       description:
-        "Tutor of Algorithms and Data Structures I at PUC Minas, assisting students in understanding concepts and solving exercises, developing skills in communication and leadership.",
+        "Monitor de Algoritmos e Estrutura de Dados I na PUC Minas, auxilio alunos na compreensão de conceitos e resolução de exercícios, desenvolvendo habilidades em comunicação e liderança.",
     },
   ],
   skills: [
@@ -133,7 +134,7 @@ export const RESUME_DATA = {
       title: "AEDs I",
       techStack: ["C", "C++",],
       description:
-        "Materials and solutions for exercises in the Algorithms and Data Structures I course, Computer Science, PUC-Minas.",
+        "Materiais e soluções de exercícios da disciplina de Algoritmos e Estruturas de Dados I, Ciência da Computação, PUC-Minas.",
       logo: "",
       link: {
         label: "github.com",
@@ -141,7 +142,7 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "C/C++ Tester",
+      title: "Testador C/C++",
       techStack: [
         "C++",
         "C",
@@ -149,7 +150,7 @@ export const RESUME_DATA = {
         "Python",
       ],
       description:
-        "Project that provides an automation script to test C/C++ code, checking if the outputs are correct.",
+        "Projeto que fornece um script de automaçaõ para testar códigos em C/C++, verificando se as saídas estão corretas.",
       logo: "",
       link: {
         label: "github.com",
@@ -157,21 +158,21 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "TinkerCad Alarm",
+      title: "Alarme TinkerCad",
       techStack: ["Tinkercad", "Arduino", "C++"],
       description:
-        "Alarm Device Project with Arduino.",
+        "Projeto de Dispositivo de Alarme com Arduino.",
       logo: "",
       link: {
         label: "github.com",
-        href: "https://github.com/bernardovieirarocha/LIP-FinalProject-ArduinoAlarm",
+        href:  "https://github.com/bernardovieirarocha/LIP-FinalProject-ArduinoAlarm",
       },
     },
     {
       title: "Redjango",
       techStack: ["Side Project", "Django", "React", "DjangoRest"],
       description:
-        "RedDjango: Practical integration between Django and React.",
+        "RedDjango: Integração na prática entre Django and React.",
       logo: "",
       link: {
         label: "github.com",
@@ -182,7 +183,7 @@ export const RESUME_DATA = {
       title: "Genius TinkerCad",
       techStack: ["Arduino", "C++", "Tinkercad"],
       description:
-        "Functional implementation of the popular memory game 'Genius' using Tinkercad Circuits for the LIP course.",
+        "Implementação funcional do popular jogo de memória 'Genius' usando Tinkercad Circuits para a disciplina de LIP ",
       logo: "",
       link: {
         label: "github.com",
@@ -199,7 +200,7 @@ export const RESUME_DATA = {
         "Node.js",
       ],
       description:
-        "Interdisciplinary project to facilitate carpooling among university students, promoting a more organized, safe, and sustainable means of transportation.",
+        "Projeto de TI-1 para facilitar a combinação de caronas entre estudantes universitários, promovendo um meio de transporte mais organizado, seguro e sustentável.",
       logo: "",
       link: {
         label: "github.com",
