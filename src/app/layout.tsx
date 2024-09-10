@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: RESUME_DATA.summary,
     images: [
       {
-        url: RESUME_DATA.avatarUrl,
+        url: "https://github.com/bernardovieirarocha/cv/blob/main/src/images/logos/banner.jpeg?raw=true",
         width: 400,
         height: 400,
         alt: "Banner do Currículo de Bernardo Vieira Rocha",
