@@ -6,17 +6,29 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
+import Image from "next/image";
 
 interface Props {
   title: string;
   description: string;
   tags: readonly string[];
   link?: string;
+  image?: string;
 }
 
-export function ProjectCard({ title, description, tags, link }: Props) {
+export function ProjectCard({ title, description, tags, link, image }: Props) {
   return (
     <Card className="flex flex-col overflow-hidden border border-muted p-3">
+      {image && (
+        <div className="relative mb-3 h-40 w-full overflow-hidden rounded-md border border-muted/20 print:hidden">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover transition-transform duration-300 hover:scale-105"
+          />
+        </div>
+      )}
       <CardHeader className="">
         <div className="space-y-1">
           <CardTitle className="text-base">

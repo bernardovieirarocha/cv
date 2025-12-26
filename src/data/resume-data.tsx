@@ -11,7 +11,7 @@ export const RESUME_DATA = {
   about:
     "Undergraduate in Computer Science and Computer Engineering.",
   summary:
-  "I am an Undergraduate Student 🎓 pursuing degrees in Computer Science at the Pontifical Catholic University of Minas Gerais and in Computer Engineering at the Federal Center for Technological Education of Minas Gerais. I am a 💻 😃 Tech Enthusiast passionate about learning and utilizing new technologies. I love building interesting projects and products that also serve a purpose.",
+    "I am an Undergraduate Student 🎓 pursuing degrees in Computer Science at the Pontifical Catholic University of Minas Gerais and in Computer Engineering at the Federal Center for Technological Education of Minas Gerais. I am a 💻 😃 Tech Enthusiast passionate about learning and utilizing new technologies. I love building interesting projects and products that also serve a purpose.",
   avatarUrl:
     "https://avatars.githubusercontent.com/u/64905090?s=400&u=38aeca0edb2c6c8ccd97e96726c6ab622026c39f&v=4",
   personalWebsiteUrl: "https://bernardorocha.com",
@@ -53,14 +53,24 @@ export const RESUME_DATA = {
   ],
   certification: [
     {
-      nameCertification: "Ctrl Play+Young Course",
-      link: "https://ctrlplay.com.br/cursos-regulares/ctrl-young/",
+      nameCertification: "Algorithms and Oriented Object Programming with Swift",
+      link: "https://lms.hackatruck.com.br/mod/simplecertificate/verify.php",
       badges: [],
       logo: "",
-      start: "2020",
-      end: "2021",
+      start: "2024",
+      end: "2025",
       description:
-        "Completion of the Ctrl-Play+Young course with a focus on programming and web development.",
+        "Completion of the Algorithms and Oriented Object Programming with Swift course.",
+    },
+    {
+      nameCertification: "Red Hat System Administration I (RH124)",
+      link: "https://www.linkedin.com/in/bernardovrocha/details/certifications/1723726445548/single-media-viewer?type=DOCUMENT&profileId=ACoAAEtsdd4Bid3JT3WnHLrstc7yY9ct1Ij0dXY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B2POQ8szuTNOaUdQuXm%2B%2ByA%3D%3D",
+      badges: [],
+      logo: "",
+      start: "2024",
+      end: "2025",
+      description:
+        "Completion of the Red Hat System Administration I (RH124) course.",
     },
     {
       nameCertification: "Complete Python 3",
@@ -104,6 +114,18 @@ export const RESUME_DATA = {
     }
   ],
   work: [
+
+    {
+      company: "Fórmula CEFAST",
+      link: "",
+      badges: ["On-site"],
+      title: "Electronic Designer",
+      logo: "",
+      start: "2024",
+      end: "present",
+      description:
+        "Designing electronic circuits and PCBs using Altium Designer, assisting the team in the development of our car project.",
+    },
     {
       company: "PUC MINAS",
       link: "",
@@ -111,13 +133,14 @@ export const RESUME_DATA = {
       title: "Computer Science Tutor (AEDs I)",
       logo: "",
       start: "2024",
-      end: "Present",
+      end: "2025",
       description:
         "Tutor of Algorithms and Data Structures I at PUC Minas, assisting students in understanding concepts and solving exercises, developing skills in communication and leadership.",
     },
   ],
   skills: [
     "Python",
+    "Altium",
     "C",
     "C++",
     "Java",
@@ -130,65 +153,31 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
-      title: "AEDs I",
-      techStack: ["C", "C++",],
+      title: "FlixMate",
+      techStack: ["JavaScript", "React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Figma"],
       description:
-        "Materials and solutions for exercises in the Algorithms and Data Structures I course, Computer Science, PUC-Minas.",
+        "FlixMate: A movie streaming platform with user authentication, movie search, and movie details.",
       logo: "",
       link: {
         label: "github.com",
-        href: "https://github.com/bernardovieirarocha/aeds1",
+        href: "https://github.com/rubensbkl/Flixmate",
       },
+      image: "",
     },
+
     {
-      title: "C/C++ Tester",
-      techStack: [
-        "C++",
-        "C",
-        "Linux",
-        "Python",
-      ],
+      title: "Class2Cal",
+      techStack: ["Side Project", "Python", "Data Science", "Interface Gráfica"],
       description:
-        "Project that provides an automation script to test C/C++ code, checking if the outputs are correct.",
+        "Class2Cal: A tool to convert class schedules from CSV and JSON to iCal format.",
       logo: "",
       link: {
         label: "github.com",
-        href: "https://github.com/bernardovieirarocha/TestadorC",
+        href: "https://github.com/bernardovieirarocha/Class2Cal",
       },
+      image: "",
     },
-    {
-      title: "TinkerCad Alarm",
-      techStack: ["Tinkercad", "Arduino", "C++"],
-      description:
-        "Alarm Device Project with Arduino.",
-      logo: "",
-      link: {
-        label: "github.com",
-        href: "https://github.com/bernardovieirarocha/LIP-FinalProject-ArduinoAlarm",
-      },
-    },
-    {
-      title: "Redjango",
-      techStack: ["Side Project", "Django", "React", "DjangoRest"],
-      description:
-        "RedDjango: Practical integration between Django and React.",
-      logo: "",
-      link: {
-        label: "github.com",
-        href: "https://github.com/upwardweb/redjango",
-      },
-    },
-    {
-      title: "Genius TinkerCad",
-      techStack: ["Arduino", "C++", "Tinkercad"],
-      description:
-        "Functional implementation of the popular memory game 'Genius' using Tinkercad Circuits for the LIP course.",
-      logo: "",
-      link: {
-        label: "github.com",
-        href: "https://github.com/bernardovieirarocha/GeniusTinkerCadLIP",
-      },
-    },
+
     {
       title: "UniCaronas",
       techStack: [
@@ -205,6 +194,7 @@ export const RESUME_DATA = {
         label: "github.com",
         href: "https://github.com/bernardovieirarocha/UniCaronas",
       },
+      image: "",
     },
   ],
 } as const;

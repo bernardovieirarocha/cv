@@ -44,7 +44,7 @@ export default function Page() {
       <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
         <section
           id="aboutMe"
-          className="mx-auto w-full max-w-2xl space-y-8 print:space-y-4"
+          className="mx-auto w-full max-w-2xl space-y-12 print:space-y-4"
         >
           <div className="flex items-center justify-between">
             <div className="flex-1 space-y-1.5">
@@ -228,7 +228,7 @@ export default function Page() {
             })}
           </Section>
 
-          <Section>
+          <Section id="skills">
             <h2 className="text-xl font-bold">{t.skills}</h2>
             <div className="flex flex-wrap gap-1">
               {RESUME.skills.map((skill) => {
@@ -241,7 +241,7 @@ export default function Page() {
             </div>
           </Section>
 
-          <Section id="projects" className="print-force-new-page scroll-mb-16">
+          <Section id="projects" className="print:hidden scroll-mb-16">
             <h2 className="text-xl font-bold">{t.projects}</h2>
             <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-1 md:grid-cols-2 lg:grid-cols-3">
               {RESUME.projects.map((project) => {
@@ -252,6 +252,7 @@ export default function Page() {
                     description={project.description}
                     tags={project.techStack}
                     link={"link" in project ? project.link.href : undefined}
+                    image={"image" in project ? (project.image as string) : undefined}
                   />
                 );
               })}
