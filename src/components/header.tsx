@@ -1,158 +1,90 @@
-import { useLanguage } from "@/contexts/language-context";
-import { useTabContext } from "@/contexts/tab-context";
-import { cn } from "@/lib/utils";
-import { MenuIcon } from "lucide-react";
-import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
-import { Link as ScrollLink } from "react-scroll";
-import { ThemeButton } from "./theme-provider";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const LanguageSwitcher: React.FC = () => {
-  const { language, toggleLanguage } = useLanguage();
-
-  return (
-    <div className="flex cursor-pointer space-x-2 px-2">
-      <span
-        onClick={() => language !== "pt" && toggleLanguage()}
-        role="img"
-        aria-label="Portuguese"
-      >
-        🇧🇷
-      </span>
-      <span
-        onClick={() => language !== "en" && toggleLanguage()}
-        role="img"
-        aria-label="English"
-      >
-        🇺🇸
-      </span>
-    </div>
-  );
-};
-
-const sections = [
-  { key: "aboutMe", label: "About Me", labelPt: "Sobre Mim" },
-  {
-    key: "workExperience",
-    label: "Work Experience",
-    labelPt: "Experiência Profissional",
-  },
-  { key: "education", label: "Education", labelPt: "Educação" },
-  { key: "certifications", label: "Certifications", labelPt: "Certificações" },
-  { key: "projects", label: "Projects", labelPt: "Projetos" },
-];
-
-const HeaderButton: React.FC<{
-  label: string;
-  labelPt: string;
-  scrollId: string;
-  onClick: () => void;
-}> = ({ label, labelPt, scrollId, onClick }) => {
-  const { selectedTab, setSelectedTab } = useTabContext();
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-  const { language } = useLanguage();
-
-  const handleClick = () => {
-    setSelectedTab(label.toLowerCase());
-    onClick();
-  };
-
-  return (
-    <ScrollLink
-      to={scrollId}
-      spy={true}
-      smooth={true}
-      offset={isMobile ? -200 : -70}
-      duration={500}
-    >
-      <button
-        className={cn(
-          "text-sm md:text-sm",
-          selectedTab === label.toLowerCase() ? "text-blue-500" : "",
-        )}
-        onClick={handleClick}
-      >
-        {language === "en" ? label : labelPt}
-      </button>
-    </ScrollLink>
-  );
-};
-
-export const Header: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-  const { theme, resolvedTheme} = useTheme();
-  const [mounted, setMounted] = useState(false);
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleMenuButtonClick = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const handleMenuItemClick = () => {
-    setMenuOpen(false);
-  };
-
-  if (!mounted) {
-    return null; // Render nothing until the theme is resolved
-  }
-  
-  const headerClass =
-  resolvedTheme === "dark"
-    ? "bg-gray-900 text-white"
-    : "bg-white text-black";
-
+  const navLinks = [
+    { href: "#about", label: "Sobre", number: "01" },
+    { href: "#skills", label: "Skills", number: "02" },
+    { href: "#projects", label: "Projetos", number: "03" },
+    { href: "#contact", label: "Contato", number: "04" },
+  ];
 
   return (
-    <>
-      <header className={`sticky top-0 z-50 flex h-9 w-full items-center justify-between border-b px-4 sm:px-0 md:px-0 lg:px-0 ${headerClass} print:hidden`}>
-        <div className="mx-auto flex w-full max-w-2xl items-center justify-between">
-          <div className="hidden items-center space-x-4 md:flex">
-            {sections.map((section) => (
-              <HeaderButton
-                key={section.label}
-                label={section.label}
-                labelPt={section.labelPt}
-                scrollId={section.key}
-                onClick={handleMenuItemClick}
-              />
-            ))}
-          </div>
-          <div className="flex items-center space-x-4 md:hidden">
-            <button className="text-xl" onClick={handleMenuButtonClick}>
-              <MenuIcon size={20} />
-            </button>
-          </div>
-          <div className="flex items-center space-x-2">
-            <LanguageSwitcher />
-            <ThemeButton />
-          </div>
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-background/80 backdrop-blur-lg border-b border-border" 
+          : "bg-transparent"
+      }`}
+    >
+      <nav className="container px-6 h-20 flex items-center justify-between">
+        {/* Logo */}
+        <a href="#" className="font-mono text-xl font-bold group">
+          <span className="text-primary">&lt;</span>
+          <span className="text-foreground group-hover:text-primary transition-colors">BR</span>
+          <span className="text-primary">/&gt;</span>
+        </a>
+
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <a 
+              key={link.href}
+              href={link.href}
+              className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <span className="text-primary">{link.number}.</span> {link.label}
+            </a>
+          ))}
+          <Button variant="outline" size="sm" asChild>
+            <Link to="/resume">Currículo</Link>
+          </Button>
         </div>
-      </header>
-      {menuOpen && isMobile && (
-        <div
-          className={`submenu sticky top-9 z-50 w-full border-gray-200 shadow-md`}
+
+        {/* Mobile menu button */}
+        <button 
+          className="md:hidden p-2 text-foreground"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <div className="mx-auto flex max-w-2xl flex-col items-center p-4">
-            {sections.map((section) => (
-              <div key={section.label} className="submenu-item">
-                <HeaderButton
-                  label={section.label}
-                  labelPt={section.labelPt}
-                  scrollId={section.key}
-                  onClick={handleMenuItemClick}
-                />
-              </div>
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </nav>
+
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 top-20 bg-background/95 backdrop-blur-lg z-40">
+          <div className="flex flex-col items-center justify-center h-full gap-8">
+            {navLinks.map((link) => (
+              <a 
+                key={link.href}
+                href={link.href}
+                className="font-mono text-lg text-muted-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="text-primary">{link.number}.</span> {link.label}
+              </a>
             ))}
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/resume" onClick={() => setIsMobileMenuOpen(false)}>Currículo</Link>
+            </Button>
           </div>
         </div>
       )}
-
-      <div className="h-0.5 w-full border-transparent bg-gradient-to-r from-pink-500 via-blue-500 to-green-400 print:hidden"></div>
-    </>
+    </header>
   );
 };
+
+export default Header;
